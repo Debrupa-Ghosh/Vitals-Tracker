@@ -192,9 +192,14 @@ def get_status():
 # App Startup
 # ---------------------------------------------------------------------------
 
+import os
+
 if __name__ == "__main__":
     print("\n🏥 Starting Vitals Tracker Backend...")
     init_db()
     integration.mark_started()
-    print(f"🚀 Flask server running on http://localhost:{Config.PORT}\n")
-    app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
+
+    port = int(os.environ.get("PORT", 5000))  # 👈 IMPORTANT
+    print(f"🚀 Flask server running on port {port}\n")
+
+    app.run(host="0.0.0.0", port=port)

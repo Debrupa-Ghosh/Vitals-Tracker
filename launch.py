@@ -1,7 +1,5 @@
 """
-Vitals Tracker — Launch Script (Agent 6 Orchestrator)
-Single command to start the entire application.
-
+Vitals Tracker 
 Usage:
     python launch.py
 """
