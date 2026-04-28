@@ -84,9 +84,12 @@ def main():
 
     # --- Step 5: Start Flask backend ---
     print("🐍 Starting Flask backend on port", Config.PORT, "...")
+    env = os.environ.copy()
+    env["PYTHONPATH"] = os.path.dirname(os.path.abspath(__file__))
     backend_proc = subprocess.Popen(
         [sys.executable, "app.py"],
-        cwd=BACKEND_DIR
+        cwd=BACKEND_DIR,
+        env=env
     )
     processes.append(("Backend (Flask)", backend_proc))
 
