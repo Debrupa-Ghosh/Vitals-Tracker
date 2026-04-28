@@ -5,16 +5,15 @@ Main entry point with all API routes.
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from config import Config
-from db import init_db
-from services import integration
+from backend.config import Config
+from backend.db import init_db
+from backend.services import integration
 
-# Import all services
-from services import input as input_svc
-from services import analysis
-from services import reporting
-from services import assistant
-from services import frontend
+from backend.services import input as input_svc
+from backend.services import analysis
+from backend.services import reporting
+from backend.services import assistant
+from backend.services import frontend
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
