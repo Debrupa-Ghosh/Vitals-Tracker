@@ -11,7 +11,7 @@ from config import Config
 
 try:
     genai.configure(api_key=Config.GEMINI_API_KEY)
-    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+    gemini_model = genai.GenerativeModel("gemini-flash-latest")
 except Exception as e:
     print("Warning: Gemini not configured properly.", e)
     gemini_model = None

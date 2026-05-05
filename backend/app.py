@@ -198,7 +198,7 @@ if __name__ == "__main__":
     init_db()
     integration.mark_started()
 
-    port = int(os.environ.get("PORT", 5000))  # 👈 IMPORTANT
+    port = int(os.environ.get("PORT", Config.PORT))
     print(f"🚀 Flask server running on port {port}\n")
 
     app.run(host="0.0.0.0", port=port)
